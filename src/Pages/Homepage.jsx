@@ -6,7 +6,7 @@ import './CSS_files/HomepageStyle.css'
 // import { Header } from '../Components';
 
 function Homepage(){
-return <div className="homepage-container">
+return <div className="homepage-container page-100">
     
     <Hero />
     <FeatureProduct />
