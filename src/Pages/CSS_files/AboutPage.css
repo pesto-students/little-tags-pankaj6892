@@ -1,0 +1,29 @@
+.about-page-wrapper{
+display: flex;
+}
+
+img {
+  width: 35%;
+  height:100%;
+  display: block;
+  border-radius: var(--radius);
+  height: 500px;
+  object-fit: cover;
+}
+
+.data{
+    margin:150px;
+}
+p {
+  line-height: 2;
+  max-width: 45em;
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: var(--clr-grey-5);
+}
+.title {
+  text-align: center;
+}
+.underline {
+  margin-left: 0;
+}
