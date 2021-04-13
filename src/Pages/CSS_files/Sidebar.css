@@ -28,6 +28,7 @@
   justify-self: center;
   height: 45px;
 }
+
 .links {
     display: flex;
     flex-direction: column;
