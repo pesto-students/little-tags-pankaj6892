@@ -1,5 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Overlock:wght@700&display=swap');
+
+* {
+  font-family: 'Overlock', cursive;
+}
+
 .App {
   text-align: center;
+  background-color:#fffaf7;
+}
+
+.bgColor {
+  background-color: red;
 }
 
 .App-logo {
@@ -14,7 +26,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color:#fffaf7;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

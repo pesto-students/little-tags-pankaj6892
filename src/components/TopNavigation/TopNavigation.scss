@@ -1,0 +1,61 @@
+$primaryColor: rgb(37, 34, 34);
+$secondaryColor: red;
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  position: fixed;
+  opacity: 0.80;
+  top: 0;
+  z-index: 99;
+  background: $primaryColor;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: inline;
+  padding: 1em;
+  color: black;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .navigation a {
+    text-align: center;
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+li {
+  text-decoration: none;
+  display: inline;
+}
+
+.pt-100{
+  padding-top: 75px;
+}
+
+
+body {
+  margin: 0;
+}
+
+.container{
+  padding-left: 10px;
+  padding-right: 10px;
+}
