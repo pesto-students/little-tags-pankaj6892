@@ -1,0 +1,80 @@
+.sidebar-container{
+    text-align: center;
+   background-color: #fff7f1;
+    width: 25%;
+   
+}
+
+.sidebar-header {
+  background-color:#fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:15px 22px;
+}
+.close-btn {
+ font-size: 25px;
+  background: transparent;
+  border-color: transparent;
+  transition: hover 0.3s linear;
+  cursor: pointer;
+  color: #557a95;
+  margin-top: 3px;
+}
+.close-btn:hover {
+  color: #7395ae;
+}
+.logo {
+  justify-self: center;
+  height: 45px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+
+.links a {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 1rem 1.5rem;
+  color: rgb(73, 70, 70);
+  transition: all 0.3s linear;
+  letter-spacing: 1px;
+  background-color: #fff;
+}
+.links a:hover {
+  padding: 1rem 1.5rem;
+  padding-left: 2rem;
+  background: #b1a296;
+  color: rgb(43, 42, 42);
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background:#f1f1ef;
+  transition: all 0.3s linear;
+  transform: translate(-100%);
+  z-index: -1;
+}
+.show-sidebar {
+  transform: translate(0);
+  z-index: 999;
+}
+.cart-btn{
+  margin: 15px 150px;
+  color: #000;
+  text-align: center;
+}
+.auth-btn{
+  color: #000;
+  margin: 2rem auto;
+}
