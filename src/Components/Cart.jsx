@@ -7,7 +7,6 @@ export default function Cart() {
   return (
     <div className="cart-btn-wrapper">
       <Link to='/cart' className='cart-btn'>
-        Cart
         <span className="cart-container">
           <FaShoppingCart />
           <span className="cart-value">12</span>

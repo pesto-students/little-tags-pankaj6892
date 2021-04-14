@@ -124,12 +124,12 @@ const Hero = () =>{
           <div className="circle9"></div>
           <div className="row">
             <div className="col-sm-6 p-85 left-aling">
-              <h1>Flaunting an exceptional look wherever you go.</h1>
-              <h2>Buy Trendy Clothes</h2>
+              <h1>Shop from a variety of Styles</h1>
+              <h2>Check from a list of varities</h2>
               
               <p className="pt-65"><strong>ATTIRE FUSION</strong> is your unique clothing store for Stylish & Trendy clothes online. Shop from the most exclusive collection.</p>
 
-              <div className="button"><span>Shop Now </span></div>
+              <div className="button"><span>See Varities </span></div>
             </div>
             <div className="col-sm-6 mt-0 right-align">
               <img src={yellowJacket} alt="pink dress" width="470px"/>
