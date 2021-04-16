@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHero from "../Components/PageHero";
 import image from '../asset/about.png'
-import '../Pages/CSS_files/AboutPage.css'
+import '../Pages/style/AboutPage.css'
 
 export default function AboutPage(){
 return <main>

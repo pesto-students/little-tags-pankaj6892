@@ -1,10 +1,10 @@
 import React from "react";
 import { FaTimesCircle } from 'react-icons/fa'
-import logo from '../asset/Logo.png'
+import logo from '../asset/logo.png'
 import { Cart, Login } from './index'
 import { links } from "../utils/Constants";
 import {Link} from 'react-router-dom'
-import '../Pages/CSS_files/Sidebar.css'
+import '../Pages/style/Sidebar.css'
 
 export default function Sidebar() {
   const isOpen = false;

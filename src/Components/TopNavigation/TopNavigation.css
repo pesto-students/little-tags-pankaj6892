@@ -1,0 +1,118 @@
+.navigation {
+  list-style: none;
+  margin: 0;
+  position: fixed;
+  opacity: 1;
+  top: 0;
+  z-index: 99;
+  background: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  box-shadow: 0 0 16px 0 rgba(10, 91, 106, 0.16);
+}
+
+.navigation a {
+  text-decoration: none;
+  display: inline;
+  padding: 1em;
+  color: black;
+}
+
+.align-right{
+  align-items: right;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .navigation a {
+    text-align: center;
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+li {
+  text-decoration: none;
+  display: inline;
+}
+
+.pt-100{
+  padding-top: 75px;
+}
+
+
+body {
+  margin: 0;
+}
+
+.container{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.search-bar {
+  width: 500px;
+  margin-left: 100px;
+  margin-top: 1px;
+  height: 35px;
+  border: 1px solid rgba(99, 198, 216, 0.16);
+  padding-left: 10px;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
+.input-search-bar{
+  border: 0px;
+  min-width: 450px;
+  padding-left: 10px;
+  padding-top:0px;
+  height: 30px;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 35px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.ml-150{
+  margin-left: 150px;
+}
+
+.ml-10{
+  margin-left: 12px;
+}
+
+li:hover{
+  cursor: pointer;
+  color: blue;
+  
+}

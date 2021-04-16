@@ -1,0 +1,18 @@
+.horizontal-featured {
+  padding: 10px;
+  margin: 70px 30px 30px 70px;
+  border-radius: 20px;
+  background-color: green;
+}
+
+.vertical-featured {
+  padding: 10px;
+  margin: 70px 70px 70px 30px;
+  height: 555px;
+  border-radius: 20px;
+  background-color: rebeccapurple;
+}
+
+.mr-0{
+  margin-right: 0px;
+}

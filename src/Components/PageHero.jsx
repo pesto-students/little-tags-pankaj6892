@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import '../Pages/CSS_files/PageHero.css'
+import '../Pages/style/PageHero.css'
 import { Link } from "react-router-dom";
 
 export default function PageHero({ title }) {

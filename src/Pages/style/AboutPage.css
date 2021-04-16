@@ -3,7 +3,7 @@ display: flex;
 justify-content: space-evenly;
 }
 
-img {
+/* img {
   width: 350px;
   display: block;
   border-radius: var(--radius);
@@ -11,11 +11,12 @@ img {
   object-fit: cover;
   margin: 20px 150px;
   align-items: center;
-}
+} */
 
 .data{
     margin:150px;
 }
+
 p {
   line-height: 2;
   max-width: 45em;
@@ -23,9 +24,11 @@ p {
   margin-top: 2rem;
   color: var(--clr-grey-5);
 }
+
 .title {
   text-align: center;
 }
+
 .underline {
   margin-left: 0;
 }

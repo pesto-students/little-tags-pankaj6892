@@ -1,6 +1,6 @@
 import React from "react";
 import {FaUserPlus} from 'react-icons/fa'
-import '../Pages/CSS_files/LoginButton.css'
+import '../Pages/style/LoginButton.css'
 import {Link} from 'react-router-dom';
 
 export default function Login() {

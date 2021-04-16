@@ -1,21 +1,21 @@
 .main{
-    margin-top: 45px;
+    margin-top: 65px;
     width: 100%;
-    height: 80vh;
+    height: 520px;
     border-radius: 60px;
     background: linear-gradient(-90deg, #fce7f6 0%, #e3eaf8 100%);
 }
 .main-1{
-  margin-top: 45px;
+  margin-top: 65px;
   width: 100%;
-  height: 80vh;
+  height: 520px;
   border-radius: 60px;
   background: linear-gradient(-90deg, #e7fcf9 0%, #e3eaf8 100%);
 }
 .main-2{
-  margin-top: 45px;
+  margin-top: 65px;
   width: 100%;
-  height: 80vh;
+  height: 520px;
   border-radius: 60px;
   background: linear-gradient(-90deg, #f2f3b0 0%, #d2e7f8 100%);
 }

@@ -1,15 +1,13 @@
 import React from 'react';
-import Hero from '../Components/Hero/Hero'
-// import Header from '../Components/Header'
-import FeatureProduct from '../Components/FeatureProduct'
-import './CSS_files/HomepageStyle.css'
-// import { Header } from '../Components';
+import Hero from '../Components/Hero/Hero';
+import './style/HomepageStyle.css';
+import Featured from '../Components/Featured/Featured';
 
 function Homepage(){
 return <div>
     
     <Hero />
-    <FeatureProduct />
+    <Featured />
    
    
 </div>

@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../asset/Logo.png'
+import logo from '../asset/logo.png'
 import {Searchbar, Cart, Login} from './index'
 import {FaBars} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
-import '../Pages/CSS_files/Header.css'
+import '../Pages/style/Header.css'
 import {links} from '../utils/Constants'
 
 export default function Header(){

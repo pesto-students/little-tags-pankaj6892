@@ -1,7 +1,7 @@
 import React from "react";
 import {FaShoppingCart} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
-import '../Pages/CSS_files/Cart.css'
+import '../Pages/style/Cart.css'
 
 export default function Cart() {
   return (
