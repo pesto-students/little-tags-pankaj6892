@@ -4,7 +4,6 @@ import './TopNavigation.css';
 import logo from '../../asset/logo.png';
 import Cart from '../Cart';
 import {FaSearch} from 'react-icons/fa';
-import Login from '../LoginPopup/LoginPopup';
 
 const TopNavigation = (props) =>{
 

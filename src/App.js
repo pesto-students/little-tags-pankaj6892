@@ -1,5 +1,5 @@
 import React from 'react';
-import {Home, Cart, Error, About, Product, Login, MensCollection} from './Pages';
+import {Home, Cart, Error, About, Product} from './Pages';
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import  {Sidebar, Footer} from './Components'
