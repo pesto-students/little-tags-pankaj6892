@@ -17,7 +17,9 @@ function App() {
        <Route exact path="/about"><About /></Route>
        <Route exact path="/cart"><Cart /></Route>
        <Route exact path="/login"><LoginPopup /></Route>
-       <Route exact path="/product"><Product /></Route>
+       <Route exact path="/product/mens"><Product /></Route>
+       <Route exact path="/product/womens"><Product /></Route>
+       <Route exact path="/product/kids"><Product /></Route>
        <Route exact path="/product"><Product /></Route>
        <Route exact path="*"><Error /></Route>
        {/* <Route exact path="/product/:id" children={<SingleProduct />}><About /></Route> */}
