@@ -140,6 +140,7 @@ p {
 .page-100 {
   min-height: calc(100vh - 10rem);
   padding: 5rem 0;
+  padding-left: 20%;
 }
 .page {
   min-height: calc(100vh - (20vh + 10rem));

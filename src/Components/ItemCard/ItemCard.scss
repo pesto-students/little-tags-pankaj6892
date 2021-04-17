@@ -1,7 +1,4 @@
-p{
-  text-align: center;
-  font-size:1.3rem;
-}
+
 
 .card {
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -21,6 +18,11 @@ transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
 text-shadow: 2px 2px 2px #eb452b, 
          4px 4px 4px black;
+
+    p{
+    text-align: center;
+    font-size:1.3rem;
+  }
 }
 
 .card:hover{
