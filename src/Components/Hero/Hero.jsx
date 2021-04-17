@@ -41,9 +41,6 @@ const Hero = () => {
 
       i.current += 1;
     }, 10000);
-    // return () => {
-    //   clearTimeout(timer)
-    // }
   });
 
   return (

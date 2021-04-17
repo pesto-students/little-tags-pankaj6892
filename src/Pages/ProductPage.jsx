@@ -1,5 +1,7 @@
 import React from 'react';
-import ProductCard from '../Components/ProductCard/ProductCard';
+import VioletShirt from './violet-shirt.png';
+import PinkDress from './pink-dress.png';
+import ItemCard from '../Components/ItemCard/ItemCard';
 
 export default function ProductPage() {
   return (
@@ -8,58 +10,32 @@ export default function ProductPage() {
       <div className='ml-160'>
         <div className='row mr-0'>
           <div className='com-sm-3'>
-            <ProductCard />
+            <ItemCard
+              productName='Violet Cotton Shirt'
+              productPrice='1200'
+              productImage={VioletShirt}
+            />
           </div>
           <div className='com-sm-3'>
-            <ProductCard />
+            <ItemCard
+              productName='Pink Cotton Kurti'
+              productPrice='1599'
+              productImage={PinkDress}
+            />
           </div>
           <div className='com-sm-3'>
-            <ProductCard />
+            <ItemCard
+              productName='Violet Cotton Shirt'
+              productPrice='1200'
+              productImage={VioletShirt}
+            />
           </div>
           <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-        </div>
-        <div className='row '>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-        </div>
-        <div className='row mr-0'>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-        </div>
-        <div className='row mr-0'>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
-          </div>
-          <div className='com-sm-3'>
-            <ProductCard />
+            <ItemCard
+              productName='Pink Cotton Kurti'
+              productPrice='1599'
+              productImage={PinkDress}
+            />
           </div>
         </div>
       </div>

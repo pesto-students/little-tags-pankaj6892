@@ -30,7 +30,7 @@ const TopNavigation = (props) => {
           <input placeholder='Search...' className='input-search-bar' />
         </div>
 
-        <li className='ml-10'>Sign In</li>
+        <li className='ml-40'>Sign In</li>
         <li className='ml-10'>Sign Up</li>
         <Cart />
       </ul>
