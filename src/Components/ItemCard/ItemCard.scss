@@ -1,0 +1,75 @@
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+min-height: 340px;
+max-width: 250px;
+max-height: 340px;
+margin: auto;
+text-align: center;
+font-family: arial;
+border-radius: 20px;
+font-size: 5rem;
+text-align: center;
+color: white;
+background-color: lightgrey;
+cursor: pointer;
+font-weight: 500;
+transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+text-shadow: 2px 2px 2px #eb452b,
+         4px 4px 4px black;
+    p{
+      text-align: center;
+      font-size:1.3rem;
+    }
+
+    
+}
+
+.card:hover{
+  transform: scale(1.01);
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: #DEFADF;
+  background-color: green;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  opacity: 1;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.card button:hover {
+  color: white;
+}
+
+.item-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.box {
+  margin-top: -130px;
+  opacity: 1;
+  color: white;
+  border-radius: 0px 0px 20px 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.item-name{
+  font-size: 1rem;
+}
+
+.item-price{
+  font-size:.7rem;
+}
