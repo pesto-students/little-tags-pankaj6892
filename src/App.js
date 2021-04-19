@@ -24,7 +24,7 @@ function App() {
        <Route exact path="*"><Error /></Route>
        {/* <Route exact path="/product/:id" children={<SingleProduct />}><About /></Route> */}
     </Switch>
-    <Footer />
+    {/* <Footer /> */}
    </BrowserRouter>
   );
 }

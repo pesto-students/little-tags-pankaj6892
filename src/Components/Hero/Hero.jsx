@@ -48,7 +48,7 @@ const Hero = () => {
       {state.sliderState === SLIDER_STATE.FIRST && (
         <>
           <div className='pt-65'>
-            <div className='main center'>
+            <div className='main center-hero'>
               <div className='circle1'></div>
               <div className='circle2'></div>
               <div className='circle3'></div>
@@ -81,7 +81,7 @@ const Hero = () => {
       {state.sliderState === SLIDER_STATE.SECOND && (
         <>
           <div className='pt-65'>
-            <div className='main-1 center'>
+            <div className='main-1 center-hero'>
               <div className='circle1'></div>
               <div className='circle2'></div>
               <div className='circle3'></div>
@@ -114,7 +114,7 @@ const Hero = () => {
       {state.sliderState === SLIDER_STATE.THIRD && (
         <>
           <div className='pt-65'>
-            <div className='main-2 center'>
+            <div className='main-2 center-hero'>
               <div className='circle1'></div>
               <div className='circle2'></div>
               <div className='circle3'></div>
