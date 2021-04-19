@@ -2,7 +2,7 @@ import React from 'react';
 import {Home, Cart, Error, About, Product} from './Pages';
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import  {Sidebar, Footer} from './Components'
+import  {Sidebar} from './Components'
 import TopNavigation from './Components/TopNavigation/TopNavigation';
 import LoginPopup from './Components/LoginPopup/LoginPopup';
 

@@ -1,13 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import VioletShirt from './violet-shirt.png';
 import PinkDress from './pink-dress.png';
 import ItemCard from '../Components/ItemCard/ItemCard';
 import Sidebar from '../Components/Sidebar/Sidebar';
 import Topbar from '../Components/Topbar/Topbar';
-
-const PRODUCT_STATE = {
-  data: [],
-};
 
 const ProductPage = (props) => {
   return (
