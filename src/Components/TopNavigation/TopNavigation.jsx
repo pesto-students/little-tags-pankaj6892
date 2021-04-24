@@ -4,8 +4,14 @@ import './TopNavigation.css';
 import logo from '../../asset/logo.png';
 import Cart from '../Cart';
 import { FaSearch } from 'react-icons/fa';
+import SignInPopUp from '../SignIn/SignInPopUp';
+import SignIn from '../SignIn/SignIn';
 
 const TopNavigation = (props) => {
+  // function signIn() {
+  //   SignInPopUp.style.display = 'block';
+  // }
+
   return (
     <div>
       <ul className='navigation'>
@@ -30,7 +36,9 @@ const TopNavigation = (props) => {
           <input placeholder='Search...' className='input-search-bar' />
         </div>
 
-        <li className='ml-40'>Sign In</li>
+        <li className='ml-40'>
+          <SignIn />
+        </li>
         <li className='ml-10'>Sign Up</li>
         <Cart />
       </ul>

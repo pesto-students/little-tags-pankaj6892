@@ -55,6 +55,8 @@ text-shadow: 2px 2px 2px #eb452b,
 .item-img {
   width: 100%;
   border-radius: 20px;
+  min-height: 310px;
+  max-height: 310px;
 }
 
 .box {
@@ -72,4 +74,8 @@ text-shadow: 2px 2px 2px #eb452b,
 
 .item-price{
   font-size:.7rem;
+}
+
+.product-image-design{
+ 
 }

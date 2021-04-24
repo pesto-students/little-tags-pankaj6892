@@ -4,6 +4,7 @@ import PinkDress from './pink-dress.png';
 import ItemCard from '../Components/ItemCard/ItemCard';
 import Sidebar from '../Components/Sidebar/Sidebar';
 import Topbar from '../Components/Topbar/Topbar';
+import Product from '../Components/Product/Product';
 
 const ProductPage = (props) => {
   return (
@@ -16,6 +17,9 @@ const ProductPage = (props) => {
             </div>
             <div className='col-sm-8'>
               <Topbar />
+              <div className='row'>
+                <Product />
+              </div>
               <div className='row'>
                 <div className='com-sm-3'>
                   <ItemCard
