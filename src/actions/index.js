@@ -5,10 +5,9 @@ export const setAuthUser = (authUser) => ({
   authUser,
 });
 
-export const addToBasket = (cartData) => {
-  console.log(cartData);
+export const addToBasket = (item) => {
   return {
     type: ADD_TO_CART,
-    cartData,
+    item,
   };
 };
