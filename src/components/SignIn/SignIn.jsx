@@ -4,12 +4,10 @@ import FirebaseContext from '../Firebase/context';
 import googleIcon from './google-icon.png';
 import './SignIn.scss';
 import { BiLogOut } from 'react-icons/bi';
-// import Modal from '../Modal/Modal';
 
 const SignIn = (props) => {
   const firebase = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState('');
-  // const [showModal, setShowModal] = useState(false);
 
   const handleGoogleSignIn = () => {
     firebase
@@ -22,18 +20,11 @@ const SignIn = (props) => {
           roles: {},
         });
       })
-      .then(() => {
-        props.history.push('/');
-        // <Modal showModal={showModal} setShowModal={setShowModal} />;
-      })
+      .then(() => {})
       .catch((error) => {
         setErrorMessage(error.message);
       });
   };
-
-  // const handleSignOut = () => {
-  //   firebase.doSignOut();
-  // };
 
   return (
     <div>
@@ -50,7 +41,7 @@ const SignIn = (props) => {
   );
 };
 
-export const SignOut = () => {
+export const SignOut = (props) => {
   const firebase = useContext(FirebaseContext);
 
   const handleSignOut = () => {

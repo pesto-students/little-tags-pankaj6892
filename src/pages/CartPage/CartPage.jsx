@@ -1,32 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CartPage.scss';
 import withAuthorization from '../../components/Session/withAuthorization';
 import CartItem from '../../components/CartItem/CartItem';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-// const CART_STATUS = {
-//   EMPTY: 'empty',
-//   FILLED: 'filled',
-// };
-
-function CartPage() {
-  const [cartData, setCartData] = useState(
-    JSON.parse(localStorage.getItem('cart'))
-  );
-
+function CartPage(props) {
   let totalPrice = 0;
 
-  cartData.forEach((item) => {
+  props.cartData.forEach((item) => {
     totalPrice += item.productPrice * item.productQuantity;
   });
 
-  // const cartData = JSON.parse(localStorage.getItem('cart'));
-
-  console.log(cartData);
+  console.log(props.cartData);
 
   let newProduct = {};
 
-  if (cartData !== null) {
-    newProduct = cartData.map((product) => {
+  if (props.cartData !== null) {
+    newProduct = props.cartData.map((product) => {
       return (
         <CartItem
           key={product.productId.toString()}
@@ -48,7 +39,9 @@ function CartPage() {
           <div className='col-sm-8 pl-5'>
             <h1>Your Cart</h1>
             <div>
-              {cartData !== null ? newProduct : 'Nothing added in your cart'}
+              {props.cartData !== null
+                ? newProduct
+                : 'Nothing added in your cart'}
             </div>
           </div>
           <div className='col-sm-4'>
@@ -82,8 +75,13 @@ function CartPage() {
                 </div>
               </div>
             </div>
-
-            <button className='btn-success btn-checkout'>Checkout</button>
+            <div>
+              {totalPrice > 0 && (
+                <Link to='/address'>
+                  <button className='btn-success btn-checkout'>Checkout</button>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -92,4 +90,17 @@ function CartPage() {
   );
 }
 
-export default withAuthorization(CartPage);
+const mapStateProps = (state) => {
+  console.log(state);
+
+  if (state.cartState.cart !== null)
+    return {
+      cartData: state.cartState.cart,
+    };
+  else
+    return {
+      cartData: [],
+    };
+};
+
+export default withAuthorization(connect(mapStateProps)(CartPage));

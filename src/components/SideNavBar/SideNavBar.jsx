@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './SideNavBar.scss';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import logo from '../../logo.png';

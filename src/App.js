@@ -6,6 +6,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartPage from './pages/CartPage/CartPage';
 import AddressPage from './pages/AddressPage/AddressPage';
+import PaymentPage from './pages/PaymentPage/PaymentPage';
 // import { Sidebar } from './components';
 import TopNavigation from './components/TopNavigation/TopNavigation';
 import withAuthentication from './components/Session/withAuthentication';
@@ -45,6 +46,9 @@ function App() {
         </Route>
         <Route exact path='/product'>
           <ProductPage />
+        </Route>
+        <Route exact path='/payment'>
+          <PaymentPage />
         </Route>
         {/* <Route exact path='/product/:id' children={<ItemPage />}></Route> */}
         <Route exact path='/product/:id'>

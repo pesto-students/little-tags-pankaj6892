@@ -2,8 +2,6 @@ import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Cart.scss';
-import withAuthorization from '../Session/withAuthorization';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Cart = ({ cartData = [] }) => {

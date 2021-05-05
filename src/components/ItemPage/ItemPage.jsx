@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import './ItemPage.scss';
 import products from '../data/products.json';
 import { useParams } from 'react-router-dom';
@@ -25,7 +25,7 @@ const ItemPage = (props) => {
 
   // let [cart, setCart] = useState([]);
 
-  let localCart = localStorage.getItem('cart');
+  // let localCart = localStorage.getItem('cart');
 
   const addItem = (item) => {
     props.addToBasket(item);
@@ -98,7 +98,7 @@ const ItemPage = (props) => {
   // useEffect(() => {
   //   window.localStorage.setItem('cart', JSON.stringify(cart_state));
   // });
-
+  // eslint-disable-next-line
   filteredProduct.map((product) => {
     currentProduct.productId = product.id;
     currentProduct.productName = product.title;
@@ -110,78 +110,66 @@ const ItemPage = (props) => {
   });
 
   return (
-    <div className="row" key={currentProduct.productId}>
-      <div className="col-sm-4">
+    <div className='row' key={currentProduct.productId}>
+      <div className='col-sm-4'>
         <img
-          className="product-image"
+          className='product-image'
           src={currentProduct.productImage}
           alt={currentProduct.productName}
         />
       </div>
-      <div className="col-sm-8 product-description">
+      <div className='col-sm-8 product-description'>
         <h1>{currentProduct.productName}</h1>
-        <p className="m-0 ml-4">{currentProduct.productDescription}</p>
+        <p className='m-0 ml-4'>{currentProduct.productDescription}</p>
 
-        <h3 className="mt-5 ml-4">Sizes</h3>
-        <div className="size-list ml-4">
-          <span className="size" id="xs" onClick={selectSize('XS')}>
+        <h3 className='mt-5 ml-4'>Sizes</h3>
+        <div className='size-list ml-4'>
+          <span className='size' id='xs' onClick={selectSize('XS')}>
             XS
           </span>
-          <span className="size" id="s" onClick={selectSize('S')}>
+          <span className='size' id='s' onClick={selectSize('S')}>
             S
           </span>
-          <span className="size selected" id="m" onClick={selectSize('M')}>
+          <span className='size selected' id='m' onClick={selectSize('M')}>
             M
           </span>
-          <span className="size" id="l" onClick={selectSize('L')}>
+          <span className='size' id='l' onClick={selectSize('L')}>
             L
           </span>
-          <span className="size" id="xl" onClick={selectSize('XL')}>
+          <span className='size' id='xl' onClick={selectSize('XL')}>
             XL
           </span>
         </div>
 
-        <div className="mt-3 ml-4">
+        <div className='mt-3 ml-4'>
           <span>Quantity</span>
           <button
-            className="increment-decrement ml-3"
+            className='increment-decrement ml-3'
             onClick={decreaseQuantity}
           >
             -
           </button>
-          <span className="item-count">{itemQuantity}</span>
-          <button className="increment-decrement" onClick={increaseQuantity}>
+          <span className='item-count'>{itemQuantity}</span>
+          <button className='increment-decrement' onClick={increaseQuantity}>
             +
           </button>
         </div>
-        <button className="add-to-cart" onClick={() => addItem(currentProduct)}>
-          <FaShoppingCart className="mr-2" />
+        <button className='add-to-cart' onClick={() => addItem(currentProduct)}>
+          <FaShoppingCart className='mr-2' />
           Add to Cart
         </button>
 
-        <button className="add-to-cart">
-          <AiFillHeart className="mr-2" />
+        <button className='add-to-cart'>
+          <AiFillHeart className='mr-2' />
           Add to Wishlist
         </button>
-
-        <div>Total Items in cart: {props.cart.length}</div>
       </div>
     </div>
   );
 };
-// return <div>{currentProductDetails}</div>;
 
 const mapStateToProps = (state) => {
   console.log(state);
-
-  // if (state.cartState !== null)
-  //   return {
-  //     cart: state.cartState,
-  //   };
-  // else
-  //   return {
-  //     cart: undefined,
-  //   };
   return {
     cart: state.cartState.cart,
   };

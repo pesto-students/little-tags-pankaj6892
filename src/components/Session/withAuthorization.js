@@ -1,9 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { setAuthUser } from '../../actions';
 import FirebaseContext from '../Firebase/context';
-import * as ROUTES from '../../utils/Constants';
 
 const withAuthorization = (Component) => {
   const NewComponent = (props) => {
@@ -17,14 +15,15 @@ const withAuthorization = (Component) => {
 
     useEffect(() => {
       firebase.onAuthChangeListner(next);
+      // eslint-disable-next-line
     }, []);
 
     return props.authUser ? (
       <Component {...props} />
     ) : (
-      <p style={{ paddingTop: '1rem' }}>
+      <h1 style={{ paddingTop: '5rem' }}>
         You need to sign in to access this page.
-      </p>
+      </h1>
     );
   };
 

@@ -61,6 +61,7 @@ const CartItem = (props) => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line
     localCart = JSON.parse(localCart);
     if (localCart) setCart(localCart);
   }, []);
