@@ -2,9 +2,16 @@ import React, { useEffect, useContext } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import FirebaseContext from '../Firebase/context';
+// import Modal from '../Modal/Modal';
 
 const withAuthorization = (Component) => {
   const NewComponent = (props) => {
+    // const [showModal, setShowModal] = useState(props.value);
+
+    // const openModal = () => {
+    //   setShowModal((prev) => !prev);
+    // };
+
     const firebase = useContext(FirebaseContext);
 
     const next = (authUser) => {
@@ -21,6 +28,8 @@ const withAuthorization = (Component) => {
     return props.authUser ? (
       <Component {...props} />
     ) : (
+      // <Modal showModal={true} setShowModal={setShowModal} />
+
       <h1 style={{ paddingTop: '5rem' }}>
         You need to sign in to access this page.
       </h1>

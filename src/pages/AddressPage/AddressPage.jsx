@@ -1,5 +1,6 @@
 import React from 'react';
 import Address from '../../components/Address/Address';
+import withAuthorization from '../../components/Session/withAuthorization';
 
 const AddressPage = (props) => {
   return (
@@ -9,4 +10,4 @@ const AddressPage = (props) => {
   );
 };
 
-export default AddressPage;
+export default withAuthorization(AddressPage);

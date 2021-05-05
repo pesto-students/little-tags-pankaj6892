@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './ItemPage.scss';
 import products from '../data/products.json';
 import { useParams } from 'react-router-dom';
@@ -7,9 +7,25 @@ import { AiFillHeart } from 'react-icons/ai';
 // import Product from '../Product/Product';
 import { connect } from 'react-redux';
 import { addToBasket } from '../../actions';
+import FirebaseContext from '../Firebase/context';
 
 const ItemPage = (props) => {
   const { id } = useParams();
+  const authUser = JSON.parse(localStorage.getItem('authUser'));
+  const firebase = useContext(FirebaseContext);
+  // const [errorMessage, setErrorMessage] = useState('');
+
+  const addToFirebase = (value) => {
+    // console.log(value);
+
+    if (authUser) {
+      firebase.user(authUser.uid + '_cart').set({
+        cartItem: value,
+
+        roles: {},
+      });
+    }
+  };
 
   const [itemQuantity, setItemQuantity] = useState(1);
 
@@ -29,6 +45,7 @@ const ItemPage = (props) => {
 
   const addItem = (item) => {
     props.addToBasket(item);
+    addToFirebase(props.cart);
     // const {cart} = props
     // let cartCopy = [...cart];
 

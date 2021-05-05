@@ -6,19 +6,32 @@ import './SignIn.scss';
 import { BiLogOut } from 'react-icons/bi';
 
 const SignIn = (props) => {
-  const firebase = useContext(FirebaseContext);
+  const firebase1 = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState('');
+  // const db = Firebase.firestore();
+  // const cart = async (value) => {
+  //   console.log(value);
+  //   const response = db.collection('user');
+  //   const data = await response.get();
+  //   data.docs.forEach((item) => {
+  //     console.log(item);
+  //   });
+  // };
 
   const handleGoogleSignIn = () => {
-    firebase
+    firebase1
       .doGoogleSignIn()
       .then((authUser) => {
         console.log(authUser);
-        firebase.user(authUser.user.uid).set({
+        firebase1.user(authUser.user.uid).set({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},
         });
+        // cart(authUser.user.uid + '_cart');
+        // firebase.user(authUser.user.uid + '_cart').get()
+
+        // console.log(cart);
       })
       .then(() => {})
       .catch((error) => {

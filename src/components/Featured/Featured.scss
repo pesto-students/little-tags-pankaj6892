@@ -61,3 +61,10 @@
 .br-20{
   border-radius: 20px;
 }
+
+.featured-img{
+  cursor: pointer;
+  &:hover{
+    opacity: .9;
+  }
+}
