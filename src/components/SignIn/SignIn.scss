@@ -1,0 +1,12 @@
+.error {
+  color: red;
+  margin-top: 1px;
+  position: absolute;
+}
+
+.sign-out{
+  cursor: pointer;
+  &:hover{
+    color: blue;
+  }
+}
