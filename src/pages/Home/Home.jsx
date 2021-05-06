@@ -4,7 +4,7 @@ import Featured from '../../components/Featured/Featured';
 
 const Home = (props) => {
   return (
-    <div>
+    <div className='page-min-height'>
       <Hero />
       <Featured />
     </div>

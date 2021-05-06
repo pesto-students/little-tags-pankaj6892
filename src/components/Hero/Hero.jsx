@@ -3,6 +3,7 @@ import './Hero.scss';
 import pinkDress from './pink-dress.png';
 import yellowJacket from './yellow-jacket.png';
 import violetShirt from './violet-shirt.png';
+import { Link } from 'react-router-dom';
 
 const SLIDER_STATE = {
   FIRST: 'first',
@@ -67,9 +68,11 @@ const Hero = () => {
                       store for Stylish & Trendy clothes online. Shop from the
                       most exclusive collection.
                     </p>
-                    <div className='button'>
-                      <span>Shop Now </span>
-                    </div>
+                    <Link to='/product'>
+                      <div className='button'>
+                        <span>Shop Now </span>
+                      </div>
+                    </Link>
                   </div>
                   <div className='col-sm-6 mt-0'>
                     <img src={pinkDress} alt='pink dress' width='408px' />
@@ -100,9 +103,11 @@ const Hero = () => {
                       store for Stylish & Trendy clothes online. Shop from the
                       most exclusive collection.
                     </p>
-                    <div className='button'>
-                      <span>See Varities </span>
-                    </div>
+                    <Link to='/product'>
+                      <div className='button'>
+                        <span>See Varities </span>
+                      </div>
+                    </Link>
                   </div>
                   <div className='col-sm-6 mt-0 right-align'>
                     <img src={yellowJacket} alt='pink dress' width='408px' />
@@ -133,9 +138,11 @@ const Hero = () => {
                       store for Stylish & Trendy clothes online. Shop from the
                       most exclusive collection.
                     </p>
-                    <div className='button'>
-                      <span>Shop Now </span>
-                    </div>
+                    <Link to='/product'>
+                      <div className='button'>
+                        <span>Shop Now </span>
+                      </div>
+                    </Link>
                   </div>
                   <div className='col-sm-6 mt-0'>
                     <img src={violetShirt} alt='pink dress' width='408px' />

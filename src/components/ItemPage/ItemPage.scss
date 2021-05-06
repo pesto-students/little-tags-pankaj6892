@@ -2,9 +2,20 @@
   width: 100%;
   height: 500px;
   margin: 100px 28px;
-  padding-left: 150px;
   border-radius: 21px;
   
+}
+
+
+.product-image-thumbnail{
+  width: 90%;
+  height: 50px;
+  margin: 10px 28px;
+  opacity: .6;
+  cursor: pointer;
+  &:hover{
+    opacity: 1;
+  }
 }
 
 .product-description{

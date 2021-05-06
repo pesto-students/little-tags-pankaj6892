@@ -5,7 +5,7 @@ import './ProductPage.scss';
 
 const ProductPage = (props) => {
   return (
-    <div className='mt-64'>
+    <div className='mt-64 page-min-height'>
       <div className='page-100 center pt-64'>
         <div>
           <div className='row'>

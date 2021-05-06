@@ -44,7 +44,7 @@ const SideNavBar = (props) => {
           <h2 className='pl-4'>Categories</h2>
           <Link to='/product/mens'>Mens</Link>
           <Link to='/product/womens'>Womens</Link>
-          <Link to='/product/jewelery'>Jewelery</Link>
+          <Link to='/product/jewelery'>Jewellery</Link>
         </div>
       )}
 

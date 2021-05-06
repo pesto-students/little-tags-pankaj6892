@@ -34,7 +34,7 @@ function CartPage(props) {
 
   console.log(props.cartData);
   return (
-    <div className='mt-65'>
+    <div className='mt-65 page-min-height'>
       <div className='page-100 pt-65'>
         <div className='row'>
           <div className='col-sm-8 pl-5'>

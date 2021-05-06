@@ -4,7 +4,7 @@ import withAuthorization from '../../components/Session/withAuthorization';
 
 const AddressPage = (props) => {
   return (
-    <div>
+    <div className="page-min-height">
       <Address />
     </div>
   );

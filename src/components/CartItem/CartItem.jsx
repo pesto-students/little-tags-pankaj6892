@@ -4,50 +4,51 @@ import { connect } from 'react-redux';
 import { removeFromCart, addToBasket } from '../../actions';
 
 const CartItem = (props) => {
+  // eslint-disable-next-line
   const [itemQuantity, setItemQuantity] = useState(
     Number(props.productQuantity)
   );
-
+  // eslint-disable-next-line
   const [cart, setCart] = useState([]);
 
   let localCart = localStorage.getItem('cart');
 
-  const updateItem = (itemID, quantity, changeFlag) => {
-    let cartCopy = [...cart];
+  // const updateItem = (itemID, quantity, changeFlag) => {
+  //   let cartCopy = [...cart];
 
-    //find if item exists, just in case
-    let existentItem = cartCopy.find(
-      (item) => item.productId === Number(itemID)
-    );
+  //   //find if item exists, just in case
+  //   let existentItem = cartCopy.find(
+  //     (item) => item.productId === Number(itemID)
+  //   );
 
-    //if it doesnt exist simply return
-    if (!existentItem) return;
+  //   //if it doesnt exist simply return
+  //   if (!existentItem) return;
 
-    //continue and update quantity
-    changeFlag === 'increase'
-      ? (existentItem.productQuantity = quantity + 1)
-      : quantity > 1
-      ? (existentItem.productQuantity = quantity - 1)
-      : (existentItem.productQuantity = quantity);
+  //   //continue and update quantity
+  //   changeFlag === 'increase'
+  //     ? (existentItem.productQuantity = quantity + 1)
+  //     : quantity > 1
+  //     ? (existentItem.productQuantity = quantity - 1)
+  //     : (existentItem.productQuantity = quantity);
 
-    //validate result
-    if (existentItem.productQuantity <= 0) {
-      //removing item  by filtering it from cart array
-      cartCopy = cartCopy.filter((item) => item.productId !== itemID);
-    }
+  //   //validate result
+  //   if (existentItem.productQuantity <= 0) {
+  //     //removing item  by filtering it from cart array
+  //     cartCopy = cartCopy.filter((item) => item.productId !== itemID);
+  //   }
 
-    //again, update state and localState
-    setCart(cartCopy);
+  //   //again, update state and localState
+  //   setCart(cartCopy);
 
-    let cartString = JSON.stringify(cartCopy);
-    localStorage.setItem('cart', cartString);
+  //   let cartString = JSON.stringify(cartCopy);
+  //   localStorage.setItem('cart', cartString);
 
-    if (changeFlag === 'decrease') {
-      decreaseQuantity();
-    } else if (changeFlag === 'increase') {
-      increaseQuantity();
-    }
-  };
+  //   if (changeFlag === 'decrease') {
+  //     decreaseQuantity();
+  //   } else if (changeFlag === 'increase') {
+  //     increaseQuantity();
+  //   }
+  // };
 
   // const removeItem = (itemID) => {
   //   //create cartCopy
@@ -70,16 +71,16 @@ const CartItem = (props) => {
 
   let totalPrice = itemQuantity * props.productPrice;
 
-  const decreaseQuantity = () => {
-    if (itemQuantity >= 2) {
-      setItemQuantity(itemQuantity - 1);
-    }
-  };
+  // const decreaseQuantity = () => {
+  //   if (itemQuantity >= 2) {
+  //     setItemQuantity(itemQuantity - 1);
+  //   }
+  // };
 
-  const increaseQuantity = () => {
-    addToBasket(props.cartData[0]);
-    setItemQuantity(itemQuantity + 1);
-  };
+  // const increaseQuantity = () => {
+  //   addToBasket(props.cartData[0]);
+  //   setItemQuantity(itemQuantity + 1);
+  // };
 
   return (
     <div className='row cart-item'>
@@ -96,23 +97,23 @@ const CartItem = (props) => {
         <div className='mg-20'>
           <h3>{props.productName}</h3>
           <span>Quantity</span>
-          <button
+          {/* <button
             className='increment-decrement ml-3'
             onClick={() => {
               updateItem(props.productId, itemQuantity, 'decrease');
             }}
           >
             -
-          </button>
-          <span className='item-count'>{itemQuantity}</span>
-          <button
+          </button> */}
+          <span className='item-count-white'>{itemQuantity}</span>
+          {/* <button
             className='increment-decrement'
             onClick={() => {
               updateItem(props.productId, itemQuantity, 'increase');
             }}
           >
             +
-          </button>
+          </button> */}
           {/* <div className='pt-4'>
             <button
               className='remove-from-cart'
@@ -127,7 +128,7 @@ const CartItem = (props) => {
       </div>
       <div className='col-sm-3'>
         <div className='mg-20'>
-          <h3>₹ {totalPrice}</h3>
+          <h3>₹ {totalPrice.toFixed(2)}</h3>
         </div>
       </div>
     </div>

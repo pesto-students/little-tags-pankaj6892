@@ -7,6 +7,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartPage from './pages/CartPage/CartPage';
 import AddressPage from './pages/AddressPage/AddressPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
+// eslint-disable-next-line
+import Footer from './components/Footer/Footer';
 // import { Sidebar } from './components';
 import TopNavigation from './components/TopNavigation/TopNavigation';
 import withAuthentication from './components/Session/withAuthentication';
@@ -61,7 +63,7 @@ function App() {
         </Route>
       </Switch>
 
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

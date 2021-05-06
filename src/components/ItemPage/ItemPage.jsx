@@ -9,10 +9,29 @@ import { connect } from 'react-redux';
 import { addToBasket } from '../../actions';
 import FirebaseContext from '../Firebase/context';
 
+const IMAGE_STATE = {
+  J: 'J',
+  K: 'K',
+  L: 'L',
+  M: 'M',
+};
+
 const ItemPage = (props) => {
   const { id } = useParams();
   const authUser = JSON.parse(localStorage.getItem('authUser'));
   const firebase = useContext(FirebaseContext);
+  const [thumbState, setThumbState] = useState({ thumbState: IMAGE_STATE.J });
+
+  const changeImage = (imageId) => {
+    imageId === 'J'
+      ? setThumbState({ ...thumbState, thumbState: IMAGE_STATE.J })
+      : imageId === 'K'
+      ? setThumbState({ ...thumbState, thumbState: IMAGE_STATE.K })
+      : imageId === 'L'
+      ? setThumbState({ ...thumbState, thumbState: IMAGE_STATE.L })
+      : setThumbState({ ...thumbState, thumbState: IMAGE_STATE.M });
+  };
+
   // const [errorMessage, setErrorMessage] = useState('');
 
   const addToFirebase = (value) => {
@@ -126,18 +145,86 @@ const ItemPage = (props) => {
     currentProduct.productPrice = product.price;
   });
 
+  console.log(thumbState.thumbState);
   return (
     <div className='row' key={currentProduct.productId}>
       <div className='col-sm-4'>
-        <img
-          className='product-image'
-          src={currentProduct.productImage}
-          alt={currentProduct.productName}
-        />
+        <div className='row'>
+          <div className='col-sm-2 pt-65'>
+            <div>
+              <img
+                className='product-image-thumbnail'
+                src={currentProduct.productImage}
+                alt={currentProduct.productName}
+                onClick={() => changeImage('J')}
+              />
+            </div>
+            <div>
+              <img
+                className='product-image-thumbnail'
+                src={currentProduct.productImage}
+                alt={currentProduct.productName}
+                onClick={() => changeImage('K')}
+              />
+            </div>
+            <div>
+              <img
+                className='product-image-thumbnail'
+                src={currentProduct.productImage}
+                alt={currentProduct.productName}
+                onClick={() => changeImage('L')}
+              />
+            </div>
+            <div>
+              <img
+                className='product-image-thumbnail'
+                src={currentProduct.productImage}
+                alt={currentProduct.productName}
+                onClick={() => changeImage('M')}
+              />
+            </div>
+          </div>
+          <div className='col-sm-10'>
+            {thumbState.thumbState === IMAGE_STATE.J && (
+              <img
+                className='product-image'
+                src={currentProduct.productImage}
+                alt={currentProduct.productName}
+              />
+            )}
+            {thumbState.thumbState === IMAGE_STATE.K && (
+              <>
+                <img
+                  className='product-image'
+                  src={currentProduct.productImage}
+                  alt={currentProduct.productName}
+                />
+              </>
+            )}
+            {thumbState.thumbState === IMAGE_STATE.L && (
+              <>
+                <img
+                  className='product-image'
+                  src={currentProduct.productImage}
+                  alt={currentProduct.productName}
+                />
+              </>
+            )}
+            {thumbState.thumbState === IMAGE_STATE.M && (
+              <>
+                <img
+                  className='product-image'
+                  src={currentProduct.productImage}
+                  alt={currentProduct.productName}
+                />
+              </>
+            )}
+          </div>
+        </div>
       </div>
       <div className='col-sm-8 product-description'>
         <h1>{currentProduct.productName}</h1>
-        <p className='m-0 ml-4'>{currentProduct.productDescription}</p>
+        <p className='m-0'>{currentProduct.productDescription}</p>
 
         <h3 className='mt-5 ml-4'>Sizes</h3>
         <div className='size-list ml-4'>

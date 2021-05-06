@@ -29,10 +29,11 @@ const withAuthorization = (Component) => {
       <Component {...props} />
     ) : (
       // <Modal showModal={true} setShowModal={setShowModal} />
-
-      <h1 style={{ paddingTop: '5rem' }}>
-        You need to sign in to access this page.
-      </h1>
+      <div className='page-min-height '>
+        <h1 style={{ paddingTop: '20rem' }} className='text-center'>
+          You need to sign in to access this page.
+        </h1>
+      </div>
     );
   };
 

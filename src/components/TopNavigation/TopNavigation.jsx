@@ -41,7 +41,7 @@ const TopNavigation = ({ authData = [] }) => {
               <Link to='/product/womens'>Womens</Link>
             </div>
             <div className='col-sm-2 col-2 pl-4 pt-sm-2 pt-1 text-right d-none d-sm-block'>
-              <Link to='/product/jewelery'>Jewelery</Link>
+              <Link to='/product/jewelery'>Jewellery</Link>
             </div>
           </div>
         </div>
