@@ -1,3 +1,11 @@
+p {
+
+}
+
+h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: left; }
+
+p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 15px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
+
 .App {
   text-align: center;
 }
@@ -35,4 +43,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.page-min-height{
+  min-height: 720px;
 }
