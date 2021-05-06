@@ -9,6 +9,7 @@ import AddressPage from './pages/AddressPage/AddressPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 // eslint-disable-next-line
 import Footer from './components/Footer/Footer';
+import ThankYou from './components/ThankYou/ThankYou';
 // import { Sidebar } from './components';
 import TopNavigation from './components/TopNavigation/TopNavigation';
 import withAuthentication from './components/Session/withAuthentication';
@@ -57,6 +58,9 @@ function App() {
         {/* <Route exact path='/product/:id' children={<ItemPage />}></Route> */}
         <Route exact path='/product/:id'>
           <ItemPage />
+        </Route>
+        <Route exact path='/thankyou'>
+          <ThankYou />
         </Route>
         <Route exact path='*'>
           {/* <Error /> */}

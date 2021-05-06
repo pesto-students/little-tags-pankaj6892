@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './Address.scss';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addAddress } from '../../actions';
 import { add } from 'lodash';
+
 //import FirebaseContext from '../Firebase/context';
 
 const Address = (props) => {
@@ -118,9 +119,11 @@ const Address = (props) => {
               </label>
             </div>
             <div className='text-center'>
-              <button type='submit' className='add-address'>
-                Make Payment
-              </button>
+              <Link to='/thankyou'>
+                <button type='submit' className='add-address'>
+                  Make Payment
+                </button>
+              </Link>
             </div>
           </div>
           <div className='col-sm-4'></div>
