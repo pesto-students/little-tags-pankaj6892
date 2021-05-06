@@ -8,6 +8,7 @@ import { add } from 'lodash';
 
 const Address = (props) => {
   const [address, setAddress] = useState(props.address);
+  // const [error, setError] = useState({});
 
   // const [state, setState] = useState({
   //   addressState: ADDRESS_STATE.ADD_ADDRESS,
@@ -141,7 +142,13 @@ const Address = (props) => {
                     onChange={(e) =>
                       setAddress({ ...address, fname: e.target.value })
                     }
+                    // onBlur={
+                    //   address.fname !== null
+                    //     ? { ...error, fname: 'error' }
+                    //     : { ...error, fname: 'success' }
+                    // }
                   />
+                  {/* {error.fname === 'error' && <p>Please fill you name</p>} */}
                 </div>
                 <div>Last Name</div>
                 <div>

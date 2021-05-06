@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CartItem.scss';
+import { connect } from 'react-redux';
+import { removeFromCart, addToBasket } from '../../actions';
 
 const CartItem = (props) => {
   const [itemQuantity, setItemQuantity] = useState(
@@ -47,18 +49,18 @@ const CartItem = (props) => {
     }
   };
 
-  const removeItem = (itemID) => {
-    //create cartCopy
-    let cartCopy = [...cart];
+  // const removeItem = (itemID) => {
+  //   //create cartCopy
+  //   let cartCopy = [...cart];
 
-    cartCopy = cartCopy.filter((item) => item.productId !== Number(itemID));
+  //   cartCopy = cartCopy.filter((item) => item.productId !== Number(itemID));
 
-    //update state and local
-    setCart(cartCopy);
+  //   //update state and local
+  //   setCart(cartCopy);
 
-    let cartString = JSON.stringify(cartCopy);
-    localStorage.setItem('cart', cartString);
-  };
+  //   let cartString = JSON.stringify(cartCopy);
+  //   localStorage.setItem('cart', cartString);
+  // };
 
   useEffect(() => {
     // eslint-disable-next-line
@@ -75,11 +77,8 @@ const CartItem = (props) => {
   };
 
   const increaseQuantity = () => {
-    if (itemQuantity < 30) {
-      setItemQuantity(itemQuantity + 1);
-    } else {
-      alert('You cannot order more than 30 quantity of a product');
-    }
+    addToBasket(props.cartData[0]);
+    setItemQuantity(itemQuantity + 1);
   };
 
   return (
@@ -114,16 +113,16 @@ const CartItem = (props) => {
           >
             +
           </button>
-          <div className='pt-4'>
+          {/* <div className='pt-4'>
             <button
               className='remove-from-cart'
               onClick={() => {
-                removeItem(props.productId);
+                props.removeFromCart(props.cartData[0]);
               }}
             >
               Remove from Cart
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className='col-sm-3'>
@@ -135,4 +134,19 @@ const CartItem = (props) => {
   );
 };
 
-export default CartItem;
+const mapStateToProps = (state) => {
+  console.log(state);
+
+  if (state.cartState.cart !== null)
+    return {
+      cartData: state.cartState.cart,
+    };
+  else
+    return {
+      cartData: [],
+    };
+};
+
+const mapDispatchToProps = { removeFromCart, addToBasket };
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartItem);

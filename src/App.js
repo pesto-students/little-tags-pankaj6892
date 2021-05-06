@@ -43,8 +43,8 @@ function App() {
         <Route exact path='/product/womens'>
           <ProductPage category="women's clothing" />
         </Route>
-        <Route exact path='/product/kids'>
-          <ProductPage category='kids' />
+        <Route exact path='/product/jewelery'>
+          <ProductPage category='jewelery' />
         </Route>
         <Route exact path='/product'>
           <ProductPage />

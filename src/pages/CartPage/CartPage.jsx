@@ -32,6 +32,7 @@ function CartPage(props) {
     });
   }
 
+  console.log(props.cartData);
   return (
     <div className='mt-65'>
       <div className='page-100 pt-65'>
@@ -39,46 +40,39 @@ function CartPage(props) {
           <div className='col-sm-8 pl-5'>
             <h1>Your Cart</h1>
             <div>
-              {props.cartData !== null
-                ? newProduct
-                : 'Nothing added in your cart'}
+              {props.cartData.length !== 0 ? newProduct : 'Your Cart Is empty'}
             </div>
           </div>
           <div className='col-sm-4'>
             <h2>Cart Total</h2>
-            <div className='cart-total pt-65 '>
+            <div className='cart-total-value pt-3 pb-3'>
               <div className='row'>
-                <div className='col-sm-6'>
-                  <h3>Price</h3>
-                </div>
-                <div className='col-sm-6'>
-                  <h3>₹ {totalPrice.toFixed(2)}</h3>
-                </div>
+                <div className='col-sm-6'>Price</div>
+                <div className='col-sm-6'>₹ {totalPrice.toFixed(2)}</div>
               </div>
               <div className='row'>
+                <div className='col-sm-6'>(GST @ 18%)</div>
                 <div className='col-sm-6'>
-                  <h3>Taxes</h3>
-                </div>
-                <div className='col-sm-6'>
-                  <h3>₹ {(totalPrice * 0.18).toFixed(2)}</h3>
+                  ₹ {(totalPrice * 0.18).toFixed(2)}
                 </div>
               </div>
               <div className='row'>
                 <hr className='line' />
               </div>
+              <hr />
               <div className='row'>
+                <div className='col-sm-6'>Total</div>
                 <div className='col-sm-6'>
-                  <h3>Total</h3>
-                </div>
-                <div className='col-sm-6'>
-                  <h3>₹ {(totalPrice + totalPrice * 0.18).toFixed(2)}</h3>
+                  ₹ {(totalPrice + totalPrice * 0.18).toFixed(2)}
                 </div>
               </div>
             </div>
             <div>
               {totalPrice > 0 && (
                 <Link to='/address'>
-                  <button className='btn-success btn-checkout'>Checkout</button>
+                  <button className='btn-success btn-checkout-cart'>
+                    Checkout
+                  </button>
                 </Link>
               )}
             </div>
@@ -90,7 +84,7 @@ function CartPage(props) {
   );
 }
 
-const mapStateProps = (state) => {
+const mapStateToProps = (state) => {
   console.log(state);
 
   if (state.cartState.cart !== null)
@@ -103,4 +97,4 @@ const mapStateProps = (state) => {
     };
 };
 
-export default withAuthorization(connect(mapStateProps)(CartPage));
+export default withAuthorization(connect(mapStateToProps)(CartPage));
