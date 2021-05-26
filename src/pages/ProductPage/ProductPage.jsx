@@ -8,7 +8,7 @@ const ProductPage = (props) => {
     <div className='mt-64 page-min-height'>
       <div className='page-100 center pt-64'>
         <div>
-          <div className='row'>
+          <div className='row mr-0'>
             <div className='col-sm-2'>
               <Sidebar />
             </div>

@@ -35,7 +35,7 @@ const Modal = ({ showModal, setShowModal }) => {
       {showModal ? (
         <div className='background-box' onClick={closeModal} ref={modalRef}>
           <div className='modalWrapper' showModal={showModal}>
-            <div className='modalImg'>
+            <div className='modalImg d-none d-sm-block'>
               <img src={fusion} alt='girl wearing fusion dress' width='381px' />
             </div>
             <div className='modalContent'>

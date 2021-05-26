@@ -3,11 +3,12 @@ import './ItemPage.scss';
 import products from '../data/products.json';
 import { useParams } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
-import { AiFillHeart } from 'react-icons/ai';
+// import { AiFillHeart } from 'react-icons/ai';
 // import Product from '../Product/Product';
 import { connect } from 'react-redux';
 import { addToBasket } from '../../actions';
 import FirebaseContext from '../Firebase/context';
+import SignInPopUp from '../SignIn/SignInPopUp';
 
 const IMAGE_STATE = {
   J: 'J',
@@ -17,6 +18,7 @@ const IMAGE_STATE = {
 };
 
 const ItemPage = (props) => {
+  console.log(props.authData);
   const { id } = useParams();
   const authUser = JSON.parse(localStorage.getItem('authUser'));
   const firebase = useContext(FirebaseContext);
@@ -147,7 +149,7 @@ const ItemPage = (props) => {
 
   console.log(thumbState.thumbState);
   return (
-    <div className='row' key={currentProduct.productId}>
+    <div className='row ml-0 mr-0' key={currentProduct.productId}>
       <div className='col-sm-4'>
         <div className='row'>
           <div className='col-sm-2 pt-65'>
@@ -258,25 +260,50 @@ const ItemPage = (props) => {
             +
           </button>
         </div>
-        <button className='add-to-cart' onClick={() => addItem(currentProduct)}>
-          <FaShoppingCart className='mr-2' />
-          Add to Cart
-        </button>
+        <div>
+          {props.authData !== undefined ? (
+            <button
+              className='add-to-cart'
+              onClick={() => addItem(currentProduct)}
+            >
+              <FaShoppingCart className='mr-2' />
+              Add to Cart
+            </button>
+          ) : (
+            <SignInPopUp item={1}></SignInPopUp>
+          )}
 
-        <button className='add-to-cart'>
-          <AiFillHeart className='mr-2' />
-          Add to Wishlist
-        </button>
+          {/* <button className='add-to-cart'>
+            <AiFillHeart className='mr-2' />
+            Add to Wishlist
+          </button> */}
+        </div>
       </div>
     </div>
   );
 };
 
+// const mapStateToProps = (state) => {
+//   console.log(state);
+//   return {
+//     cart: state.cartState.cart,
+//   };
+// };
+
+// const mapDispatchToProps = { addToBasket };
+
 const mapStateToProps = (state) => {
   console.log(state);
-  return {
-    cart: state.cartState.cart,
-  };
+
+  if (state.sessionState.authUser !== null)
+    return {
+      authData: state.sessionState.authUser,
+      cart: state.cartState.cart,
+    };
+  else
+    return {
+      authData: undefined,
+    };
 };
 
 const mapDispatchToProps = { addToBasket };
