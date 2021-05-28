@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import Offers from '../../components/Offers/Offers';
 import Product from '../../components/Product/Product';
 import './ProductPage.scss';
 
@@ -18,7 +19,7 @@ const ProductPage = (props) => {
               </div>
             </div>
             <div className='col-sm-2'>
-              <h1>Offer Section</h1>
+              <Offers />
             </div>
           </div>
         </div>

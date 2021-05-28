@@ -3,7 +3,7 @@ import './Featured.scss';
 import HangingCloths from './hanging-cloths.jpg';
 import Jeans from './jeans.jpg';
 import Traditional from './traditional.jpg';
-import Western from './western.webp';
+import Western from './western.jpg';
 import { Link } from 'react-router-dom';
 
 export default function FeatureProduct() {
@@ -43,7 +43,7 @@ export default function FeatureProduct() {
             </div>
           </Link>
         </div>
-        <div className='col-sm-6'>
+        <div className='col-sm-6 d-none d-sm-block'>
           <div className='row'>
             <div className='col-sm-6'>
               <Link to='/product/mens'>
@@ -53,15 +53,15 @@ export default function FeatureProduct() {
                     src={Traditional}
                     alt='hanging clothes'
                     height='560px'
-                    width='100%'
+                    width='110%'
                   />
-                  <div className='horizontal-sub-featured'>
+                  <div className='horizontal-sub-featured-110'>
                     <p className='featured-text'>Traditional</p>
                   </div>
                 </div>
               </Link>
             </div>
-            <div className='col-sm-6 pl-0'>
+            <div className='col-sm-6 pl-0 d-none d-sm-block'>
               <Link to='/product/womens'>
                 <div className='vertical-featured'>
                   <img
@@ -69,9 +69,9 @@ export default function FeatureProduct() {
                     src={Western}
                     alt='hanging clothes'
                     height='560px'
-                    width='100%'
+                    width='110%'
                   />
-                  <div className='horizontal-sub-featured'>
+                  <div className='horizontal-sub-featured-110'>
                     <p className='featured-text'>Western</p>
                   </div>
                 </div>

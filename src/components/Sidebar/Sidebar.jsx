@@ -4,8 +4,8 @@ import './Sidebar.scss';
 const Sidebar = (props) => {
   return (
     <div className='sidebar-category'>
-      <h1>Catetories</h1>
-      {/* <h4>Fabric Type</h4>
+      <h1>Filters</h1>
+      <h4>Fabric Type</h4>
       <div className='pl-2'>
         <input
           className='input-check'
@@ -50,7 +50,7 @@ const Sidebar = (props) => {
         <label className='pl-2' for='polyster'>
           Polyster Fabric
         </label>
-      </div> */}
+      </div>
     </div>
   );
 };
