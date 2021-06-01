@@ -4,8 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(250, 211, 144,1.0);
-  border: 3px solid white;
+  background-color: white;
+  border: 3px solid lightgray;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 10px;
@@ -58,4 +58,8 @@
 
 .width-0{
   width: 0px;
+}
+
+.one-line{
+  display: inline;
 }

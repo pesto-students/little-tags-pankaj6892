@@ -37,14 +37,13 @@ const ItemPage = (props) => {
   // const [errorMessage, setErrorMessage] = useState('');
 
   const addToFirebase = (value) => {
-    // console.log(value);
-
     if (authUser) {
       firebase.user(authUser.uid + '_cart').set({
         cartItem: value,
 
         roles: {},
       });
+      console.log(value);
     }
   };
 
@@ -66,6 +65,7 @@ const ItemPage = (props) => {
 
   const addItem = (item) => {
     props.addToBasket(item);
+    console.log(props.cart);
     addToFirebase(props.cart);
     // const {cart} = props
     // let cartCopy = [...cart];
@@ -152,7 +152,7 @@ const ItemPage = (props) => {
     <div className='row ml-0 mr-0' key={currentProduct.productId}>
       <div className='col-sm-4'>
         <div className='row'>
-          <div className='col-sm-2 pt-65'>
+          <div className='col-sm-2 col-2 pt-65'>
             <div>
               <img
                 className='product-image-thumbnail'
@@ -186,7 +186,7 @@ const ItemPage = (props) => {
               />
             </div>
           </div>
-          <div className='col-sm-10'>
+          <div className='col-sm-10 col-10 pt-3'>
             {thumbState.thumbState === IMAGE_STATE.J && (
               <img
                 className='product-image'
