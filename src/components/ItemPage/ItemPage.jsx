@@ -23,6 +23,7 @@ const ItemPage = (props) => {
   const authUser = JSON.parse(localStorage.getItem('authUser'));
   const firebase = useContext(FirebaseContext);
   const [thumbState, setThumbState] = useState({ thumbState: IMAGE_STATE.J });
+  const [sizeState, setSizeState] = useState('M');
 
   const changeImage = (imageId) => {
     imageId === 'J'
@@ -112,14 +113,15 @@ const ItemPage = (props) => {
     productId: '',
     productName: '',
     productImage: '',
-    productSize: '',
+    productSize: sizeState,
     productDescription: '',
     productQuantity: '',
     productPrice: '',
   };
 
   const selectSize = (size) => {
-    currentProduct.productSize = size;
+    setSizeState(size);
+    //currentProduct.productSize = size;
   };
 
   const filteredProduct = products.filter((product) => {
@@ -141,7 +143,7 @@ const ItemPage = (props) => {
     currentProduct.productId = product.id;
     currentProduct.productName = product.title;
     currentProduct.productImage = product.image;
-    currentProduct.productSize = 'M';
+    currentProduct.productSize = sizeState;
     currentProduct.productDescription = product.description;
     currentProduct.productQuantity = itemQuantity;
     currentProduct.productPrice = product.price;
@@ -230,19 +232,39 @@ const ItemPage = (props) => {
 
         <h3 className='mt-5 ml-4'>Sizes</h3>
         <div className='size-list ml-4'>
-          <span className='size' id='xs' onClick={selectSize('XS')}>
+          <span
+            className={sizeState === 'XS' ? 'size selected' : 'size'}
+            id='xs'
+            onClick={() => selectSize('XS')}
+          >
             XS
           </span>
-          <span className='size' id='s' onClick={selectSize('S')}>
+          <span
+            className={sizeState === 'S' ? 'size selected' : 'size'}
+            id='s'
+            onClick={() => selectSize('S')}
+          >
             S
           </span>
-          <span className='size selected' id='m' onClick={selectSize('M')}>
+          <span
+            className={sizeState === 'M' ? 'size selected' : 'size'}
+            id='m'
+            onClick={() => selectSize('M')}
+          >
             M
           </span>
-          <span className='size' id='l' onClick={selectSize('L')}>
+          <span
+            className={sizeState === 'L' ? 'size selected' : 'size'}
+            id='l'
+            onClick={() => selectSize('L')}
+          >
             L
           </span>
-          <span className='size' id='xl' onClick={selectSize('XL')}>
+          <span
+            className={sizeState === 'XL' ? 'size selected' : 'size'}
+            id='xl'
+            onClick={() => selectSize('XL')}
+          >
             XL
           </span>
         </div>

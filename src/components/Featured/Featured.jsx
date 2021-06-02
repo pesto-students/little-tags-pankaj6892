@@ -56,7 +56,7 @@ export default function FeatureProduct() {
                     width='110%'
                   />
                   <div className='horizontal-sub-featured-110'>
-                    <p className='featured-text'>Traditional</p>
+                    <p className='featured-text'>Mens</p>
                   </div>
                 </div>
               </Link>
@@ -72,7 +72,7 @@ export default function FeatureProduct() {
                     width='110%'
                   />
                   <div className='horizontal-sub-featured-110'>
-                    <p className='featured-text'>Western</p>
+                    <p className='featured-text'>Womens</p>
                   </div>
                 </div>
               </Link>

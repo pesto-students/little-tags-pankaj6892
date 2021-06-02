@@ -125,6 +125,7 @@ const CartItem = (props) => {
             </button>
           </div> */}
         </div>
+        <div className='item-count-white'>Size: {props.productSize}</div>
       </div>
       <div className='col-sm-3'>
         <div className='mg-20'>
