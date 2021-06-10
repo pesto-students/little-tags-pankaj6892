@@ -8,11 +8,11 @@ const Footer = () => {
   return (
     <div className='footer-div'>
       <h1 className='text-center'>
-        <img src={logo} alt='Attire Fusion' width='200px' />
+        <img src={logo} alt='Attire Fusion' />
       </h1>
       <div className='row'>
         <div className='col-sm-6'>
-          <img src={card} alt='debit card' width='500px' />
+          <img src={card} alt='debit card' style={{ maxWidth: '300px' }} />
         </div>
         <div className='col-sm-3'>
           <div className='text-left'>

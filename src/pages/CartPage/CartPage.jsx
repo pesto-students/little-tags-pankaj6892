@@ -36,7 +36,7 @@ function CartPage(props) {
   return (
     <div className='mt-65 page-min-height'>
       <div className='page-100 pt-65'>
-        <div className='row'>
+        <div className='row justify-content-center pt-5 pb-5 mr-0'>
           <div className='col-sm-8 pl-5'>
             <h1>Your Cart</h1>
             <div>

@@ -46,19 +46,19 @@ const Hero = () => {
 
   return (
     <div>
-      <div className='d-none d-sm-block'>
+      <div>
         {state.sliderState === SLIDER_STATE.FIRST && (
           <>
             <div className='pthero-100'>
               <div className='main center-hero'>
-                <div className='circle1'></div>
-                <div className='circle2'></div>
-                <div className='circle3'></div>
-                <div className='circle4'></div>
-                <div className='circle6'></div>
-                <div className='circle7'></div>
-                <div className='circle8'></div>
-                <div className='circle9'></div>
+                <div className='circle1 d-none d-sm-block'></div>
+                <div className='circle2 d-none d-sm-block'></div>
+                <div className='circle3 d-none d-sm-block'></div>
+                <div className='circle4 d-none d-sm-block'></div>
+                <div className='circle6 d-none d-sm-block'></div>
+                <div className='circle7 d-none d-sm-block'></div>
+                <div className='circle8 d-none d-sm-block'></div>
+                <div className='circle9 d-none d-sm-block'></div>
                 <div className='row'>
                   <div className='col-sm-6 p-85 left-aling'>
                     <h1>Flaunting an exceptional look wherever you go.</h1>
@@ -74,7 +74,7 @@ const Hero = () => {
                       </div>
                     </Link>
                   </div>
-                  <div className='col-sm-6 mt-0'>
+                  <div className='col-sm-6 mt-0 d-none d-sm-block'>
                     <img src={pinkDress} alt='pink dress' width='408px' />
                   </div>
                 </div>
@@ -86,14 +86,14 @@ const Hero = () => {
           <>
             <div className='pthero-100'>
               <div className='main-1 center-hero'>
-                <div className='circle1'></div>
-                <div className='circle2'></div>
-                <div className='circle3'></div>
-                <div className='circle4'></div>
-                <div className='circle6'></div>
-                <div className='circle7'></div>
-                <div className='circle8'></div>
-                <div className='circle9'></div>
+                <div className='circle1 d-none d-sm-block'></div>
+                <div className='circle2 d-none d-sm-block'></div>
+                <div className='circle3 d-none d-sm-block'></div>
+                <div className='circle4 d-none d-sm-block'></div>
+                <div className='circle6 d-none d-sm-block'></div>
+                <div className='circle7 d-none d-sm-block'></div>
+                <div className='circle8 d-none d-sm-block'></div>
+                <div className='circle9 d-none d-sm-block'></div>
                 <div className='row'>
                   <div className='col-sm-6 p-85 left-aling'>
                     <h1>Shop from a variety of Styles</h1>
@@ -109,7 +109,7 @@ const Hero = () => {
                       </div>
                     </Link>
                   </div>
-                  <div className='col-sm-6 mt-0 right-align'>
+                  <div className='col-sm-6 mt-0 right-align d-none d-sm-block'>
                     <img src={yellowJacket} alt='pink dress' width='408px' />
                   </div>
                 </div>
@@ -121,14 +121,14 @@ const Hero = () => {
           <>
             <div className='pthero-100'>
               <div className='main-2 center-hero'>
-                <div className='circle1'></div>
-                <div className='circle2'></div>
-                <div className='circle3'></div>
-                <div className='circle4'></div>
-                <div className='circle6'></div>
-                <div className='circle7'></div>
-                <div className='circle8'></div>
-                <div className='circle9'></div>
+                <div className='circle1 d-none d-sm-block'></div>
+                <div className='circle2 d-none d-sm-block'></div>
+                <div className='circle3 d-none d-sm-block'></div>
+                <div className='circle4 d-none d-sm-block'></div>
+                <div className='circle6 d-none d-sm-block'></div>
+                <div className='circle7 d-none d-sm-block'></div>
+                <div className='circle8 d-none d-sm-block'></div>
+                <div className='circle9 d-none d-sm-block'></div>
                 <div className='row'>
                   <div className='col-sm-6 p-85 left-aling'>
                     <h1>Flaunting an exceptional look wherever you go.</h1>
@@ -144,7 +144,7 @@ const Hero = () => {
                       </div>
                     </Link>
                   </div>
-                  <div className='col-sm-6 mt-0'>
+                  <div className='col-sm-6 mt-0 d-none d-sm-block'>
                     <img src={violetShirt} alt='pink dress' width='408px' />
                   </div>
                 </div>
@@ -153,7 +153,7 @@ const Hero = () => {
           </>
         )}
       </div>
-      <div className='d-block d-sm-none'>
+      {/* <div className='d-block d-sm-none'>
         <div className='mt-5'>
           <div className='main-3'>
             <div className='row ml-0 mr-0'>
@@ -172,7 +172,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

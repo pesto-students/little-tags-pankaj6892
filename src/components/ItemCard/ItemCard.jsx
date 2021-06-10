@@ -39,11 +39,13 @@ const ItemCard = (props) => {
           alt={props.productName}
         />
         <div className='box'>
-          <div className='item-name'>{props.productName}</div>
+          {/* <div className='item-name'>{props.productName}</div> */}
           {/* <div className='item-price'>₹ {props.productPrice}</div> */}
           <button value={props.productID} onClick={addToCart}>
             {/* Add to Cart */}
-            <div className='item-price'>₹ {props.productPrice}</div>
+            <div className='item-price'>
+              {props.productName} <br />₹ {props.productPrice}
+            </div>
           </button>
         </div>
       </div>

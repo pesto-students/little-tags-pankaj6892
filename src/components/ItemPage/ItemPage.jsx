@@ -3,11 +3,12 @@ import './ItemPage.scss';
 import products from '../data/products.json';
 import { useParams } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
-import { AiFillHeart } from 'react-icons/ai';
+// import { AiFillHeart } from 'react-icons/ai';
 // import Product from '../Product/Product';
 import { connect } from 'react-redux';
 import { addToBasket } from '../../actions';
 import FirebaseContext from '../Firebase/context';
+import SignInPopUp from '../SignIn/SignInPopUp';
 
 const IMAGE_STATE = {
   J: 'J',
@@ -17,10 +18,12 @@ const IMAGE_STATE = {
 };
 
 const ItemPage = (props) => {
+  console.log(props.authData);
   const { id } = useParams();
   const authUser = JSON.parse(localStorage.getItem('authUser'));
   const firebase = useContext(FirebaseContext);
   const [thumbState, setThumbState] = useState({ thumbState: IMAGE_STATE.J });
+  const [sizeState, setSizeState] = useState('M');
 
   const changeImage = (imageId) => {
     imageId === 'J'
@@ -35,14 +38,13 @@ const ItemPage = (props) => {
   // const [errorMessage, setErrorMessage] = useState('');
 
   const addToFirebase = (value) => {
-    // console.log(value);
-
     if (authUser) {
       firebase.user(authUser.uid + '_cart').set({
         cartItem: value,
 
         roles: {},
       });
+      console.log(value);
     }
   };
 
@@ -64,6 +66,7 @@ const ItemPage = (props) => {
 
   const addItem = (item) => {
     props.addToBasket(item);
+    console.log(props.cart);
     addToFirebase(props.cart);
     // const {cart} = props
     // let cartCopy = [...cart];
@@ -110,14 +113,15 @@ const ItemPage = (props) => {
     productId: '',
     productName: '',
     productImage: '',
-    productSize: '',
+    productSize: sizeState,
     productDescription: '',
     productQuantity: '',
     productPrice: '',
   };
 
   const selectSize = (size) => {
-    currentProduct.productSize = size;
+    setSizeState(size);
+    //currentProduct.productSize = size;
   };
 
   const filteredProduct = products.filter((product) => {
@@ -139,7 +143,7 @@ const ItemPage = (props) => {
     currentProduct.productId = product.id;
     currentProduct.productName = product.title;
     currentProduct.productImage = product.image;
-    currentProduct.productSize = 'M';
+    currentProduct.productSize = sizeState;
     currentProduct.productDescription = product.description;
     currentProduct.productQuantity = itemQuantity;
     currentProduct.productPrice = product.price;
@@ -147,10 +151,10 @@ const ItemPage = (props) => {
 
   console.log(thumbState.thumbState);
   return (
-    <div className='row' key={currentProduct.productId}>
+    <div className='row ml-0 mr-0' key={currentProduct.productId}>
       <div className='col-sm-4'>
         <div className='row'>
-          <div className='col-sm-2 pt-65'>
+          <div className='col-sm-2 col-2 pt-65'>
             <div>
               <img
                 className='product-image-thumbnail'
@@ -184,7 +188,7 @@ const ItemPage = (props) => {
               />
             </div>
           </div>
-          <div className='col-sm-10'>
+          <div className='col-sm-10 col-10 pt-3'>
             {thumbState.thumbState === IMAGE_STATE.J && (
               <img
                 className='product-image'
@@ -228,19 +232,39 @@ const ItemPage = (props) => {
 
         <h3 className='mt-5 ml-4'>Sizes</h3>
         <div className='size-list ml-4'>
-          <span className='size' id='xs' onClick={selectSize('XS')}>
+          <span
+            className={sizeState === 'XS' ? 'size selected' : 'size'}
+            id='xs'
+            onClick={() => selectSize('XS')}
+          >
             XS
           </span>
-          <span className='size' id='s' onClick={selectSize('S')}>
+          <span
+            className={sizeState === 'S' ? 'size selected' : 'size'}
+            id='s'
+            onClick={() => selectSize('S')}
+          >
             S
           </span>
-          <span className='size selected' id='m' onClick={selectSize('M')}>
+          <span
+            className={sizeState === 'M' ? 'size selected' : 'size'}
+            id='m'
+            onClick={() => selectSize('M')}
+          >
             M
           </span>
-          <span className='size' id='l' onClick={selectSize('L')}>
+          <span
+            className={sizeState === 'L' ? 'size selected' : 'size'}
+            id='l'
+            onClick={() => selectSize('L')}
+          >
             L
           </span>
-          <span className='size' id='xl' onClick={selectSize('XL')}>
+          <span
+            className={sizeState === 'XL' ? 'size selected' : 'size'}
+            id='xl'
+            onClick={() => selectSize('XL')}
+          >
             XL
           </span>
         </div>
@@ -258,25 +282,50 @@ const ItemPage = (props) => {
             +
           </button>
         </div>
-        <button className='add-to-cart' onClick={() => addItem(currentProduct)}>
-          <FaShoppingCart className='mr-2' />
-          Add to Cart
-        </button>
+        <div>
+          {props.authData !== undefined ? (
+            <button
+              className='add-to-cart'
+              onClick={() => addItem(currentProduct)}
+            >
+              <FaShoppingCart className='mr-2' />
+              Add to Cart
+            </button>
+          ) : (
+            <SignInPopUp item={1}></SignInPopUp>
+          )}
 
-        <button className='add-to-cart'>
-          <AiFillHeart className='mr-2' />
-          Add to Wishlist
-        </button>
+          {/* <button className='add-to-cart'>
+            <AiFillHeart className='mr-2' />
+            Add to Wishlist
+          </button> */}
+        </div>
       </div>
     </div>
   );
 };
 
+// const mapStateToProps = (state) => {
+//   console.log(state);
+//   return {
+//     cart: state.cartState.cart,
+//   };
+// };
+
+// const mapDispatchToProps = { addToBasket };
+
 const mapStateToProps = (state) => {
   console.log(state);
-  return {
-    cart: state.cartState.cart,
-  };
+
+  if (state.sessionState.authUser !== null)
+    return {
+      authData: state.sessionState.authUser,
+      cart: state.cartState.cart,
+    };
+  else
+    return {
+      authData: undefined,
+    };
 };
 
 const mapDispatchToProps = { addToBasket };

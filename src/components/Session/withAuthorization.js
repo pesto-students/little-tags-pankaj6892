@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import FirebaseContext from '../Firebase/context';
+import SignInPopUp from '../SignIn/SignInPopUp';
 // import Modal from '../Modal/Modal';
 
 const withAuthorization = (Component) => {
@@ -32,6 +33,11 @@ const withAuthorization = (Component) => {
       <div className='page-min-height '>
         <h1 style={{ paddingTop: '20rem' }} className='text-center'>
           You need to sign in to access this page.
+          <div>
+            <button style={{'border': '0px'}}>
+              <SignInPopUp item={0}/>
+            </button>
+          </div>
         </h1>
       </div>
     );
